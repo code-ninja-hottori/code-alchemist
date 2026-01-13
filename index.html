@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Validation</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px 40px;
+            border-radius: 15px;
+            width: 360px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: white;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        input[type="submit"] {
+            background: #ff9800;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: #ff5722;
+            transform: scale(1.05);
+        }
+    </style>
+
+    <script>
+        function handleSubmit() {
+            var name = document.getElementById("name").value.trim().toLowerCase().split(" ")[0];
+            var roll = document.getElementById("roll").value.trim();
+            var sec  = document.getElementById("sec").value.trim().toUpperCase();
+
+            if (name === "" || roll === "" || sec === "") {
+                alert("⚠️ All fields are required!");
+                return false;
+            }
+
+            var students = [
+
+                /* SECTION B */
+                { name:"abhilasha", roll:"1", sec:"B" },
+                { name:"abhishree", roll:"2", sec:"B" },
+                { name:"adiptya", roll:"3", sec:"B" },
+                { name:"aditya", roll:"4", sec:"B" },
+                { name:"ahana", roll:"5", sec:"B" },
+                { name:"aniket", roll:"6", sec:"B" },
+                { name:"animesh", roll:"7", sec:"B" },
+                { name:"ankan", roll:"8", sec:"B" },
+                { name:"ankit", roll:"9", sec:"B" },
+                { name:"anudeepa", roll:"10", sec:"B" },
+                { name:"anuj", roll:"11", sec:"B" },
+                { name:"anup", roll:"12", sec:"B" },
+                { name:"anwesha", roll:"13", sec:"B" },
+                { name:"ashutosh", roll:"14", sec:"B" },
+                { name:"avipsa", roll:"15", sec:"B" },
+                { name:"ayan", roll:"16", sec:"B" },
+                { name:"ayush", roll:"17", sec:"B" },
+                { name:"debanjan", roll:"18", sec:"B" },
+                { name:"deepsikha", roll:"19", sec:"B" },
+                { name:"gaurav", roll:"20", sec:"B" },
+                { name:"hiya", roll:"21", sec:"B" },
+                { name:"ishan", roll:"22", sec:"B" },
+                { name:"ishita", roll:"23", sec:"B" },
+                { name:"janko", roll:"24", sec:"B" },
+                { name:"kritika", roll:"25", sec:"B" },
+                { name:"kunaram", roll:"26", sec:"B" },
+                { name:"mayank", roll:"27", sec:"B" },
+                { name:"nila", roll:"28", sec:"B" },
+                { name:"rajdeep", roll:"29", sec:"B" },
+                { name:"rangana", roll:"30", sec:"B" },
+                { name:"rishita", roll:"31", sec:"B" },
+                { name:"ritesh", roll:"32", sec:"B" },
+                { name:"ritik", roll:"33", sec:"B" },
+                { name:"riya", roll:"34", sec:"B" },
+                { name:"rohit", roll:"35", sec:"B" },
+                { name:"sansthita", roll:"36", sec:"B" },
+                { name:"shreyasi", roll:"37", sec:"B" },
+                { name:"sona", roll:"38", sec:"B" },
+                { name:"soumya", roll:"39", sec:"B" },
+                { name:"sounak", roll:"40", sec:"B" },
+                { name:"sristhi", roll:"41", sec:"B" },
+                { name:"swastika", roll:"42", sec:"B" },
+                { name:"ujaan", roll:"43", sec:"B" },
+                { name:"vageesh", roll:"44", sec:"B" },
+                { name:"vanshika", roll:"45", sec:"B" },
+
+                /* SECTION A */
+                { name:"abhigyan", roll:"1", sec:"A" },
+                { name:"adhrit", roll:"2", sec:"A" },
+                { name:"adisan", roll:"3", sec:"A" },
+                { name:"aditya", roll:"4", sec:"A" },
+                { name:"akash", roll:"5", sec:"A" },
+                { name:"anjali", roll:"6", sec:"A" },
+                { name:"aratrika", roll:"7", sec:"A" },
+                { name:"arghya", roll:"8", sec:"A" },
+                { name:"arush", roll:"9", sec:"A" },
+                { name:"ayan", roll:"10", sec:"A" },
+                { name:"ayush", roll:"11", sec:"A" },
+                { name:"biswajit", roll:"12", sec:"A" },
+                { name:"chetna", roll:"13", sec:"A" },
+                { name:"harshraj", roll:"14", sec:"A" },
+                { name:"ishika", roll:"15", sec:"A" },
+                { name:"janvi", roll:"16", sec:"A" },
+				{ name:"keshav", roll:"17", sec:"A" },
+                { name:"kushagra", roll:"18", sec:"A" },
+                { name:"manav", roll:"19", sec:"A" },
+                { name:"matta", roll:"20", sec:"A" },
+                { name:"mou", roll:"21", sec:"A" },
+                { name:"poulami", roll:"22", sec:"A" },
+                { name:"priyanshu", roll:"23", sec:"A" },
+                { name:"purnima", roll:"24", sec:"A" },
+                { name:"ranabir", roll:"25", sec:"A" },
+                { name:"rashmi", roll:"26", sec:"A" },
+                { name:"richa", roll:"27", sec:"A" },
+                { name:"ritika", roll:"28", sec:"A" },
+                { name:"sagar", roll:"29", sec:"A" },
+                { name:"sagnik", roll:"30", sec:"A" },
+                { name:"samadrita", roll:"31", sec:"A" },
+                { name:"samriddhi", roll:"32", sec:"A" },
+                { name:"sanchay", roll:"33", sec:"A" },
+                { name:"saptam", roll:"34", sec:"A" },
+                { name:"sayan", roll:"35", sec:"A" },
+                { name:"shreya", roll:"36", sec:"A" },
+                { name:"shreyasi", roll:"37", sec:"A" },
+                { name:"shuvam", roll:"38", sec:"A" },
+                { name:"sparsh", roll:"39", sec:"A" },
+                { name:"subhadeep", roll:"40", sec:"A" },
+                { name:"subhomita", roll:"41", sec:"A" },
+                { name:"suvoshree", roll:"42", sec:"A" },
+                { name:"swastika", roll:"43", sec:"A" },
+                { name:"tejus", roll:"44", sec:"A" },
+                { name:"vanshika", roll:"45", sec:"A" },
+                { name:"vikash", roll:"46", sec:"A" }
+            ];
+
+            for (var i = 0; i < students.length; i++) {
+                if (name === students[i].name &&
+                    roll === students[i].roll &&
+                    sec === students[i].sec) {
+
+                    alert("✅ Valid details. Redirecting...");
+                    window.location.href = "https://thepro2010.github.io/CLASS-10/";
+                    return false;
+                }
+            }
+
+            alert("❌ Invalid details! Try again.");
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Student Login</h2>
+
+    <form onsubmit="return handleSubmit()">
+        <input type="text" id="name" placeholder="Enter First Name Only">
+        <input type="number" id="roll" placeholder="Enter Roll No">
+        <input type="text" id="sec" placeholder="Enter Section (A/B)">
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>
